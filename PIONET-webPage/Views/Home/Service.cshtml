@@ -1,5 +1,76 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
+﻿@{
+    ViewData["Title"] = "Service Page";
+}
+
+<main>
+    <div class="services-image-wrapper">
+        <img src="~/img/page/hallway.jpg" />
+    </div>
+    <div class="services-section-wrapper">
+        <div class="service-title-wrapper" id="service-title-wrapper">
+            <h1>Software</h1>
+        </div>
+        <div class="block services-blocks-wrapper" id="service-block-1">
+            <p class="service-title-wrapper" id="service-block-1-title" hidden>Software</p>
+            <div class="service-block">
+                <img class="icon" src="~/img/icons/laptop.png" />
+                <div class="selection-indicator"><div></div></div>
+                <h3 class="service-title">Aplicaciones Personalizadas</h3>
+                <p class="service-description">
+                    Creación de aplicaciones a medida para satisfacer las necesidades específicas de cada cliente.
+                </p>
+            </div>
+        </div>
+        <div class="block services-blocks-wrapper hidden" id="service-block-2">
+            <p class="service-title-wrapper" id="service-block-2-title" hidden>Redes</p>
+            <div class="service-block">
+                <img class="icon" src="~/img/icons/server.png" />
+                <div class="selection-indicator"><div></div></div>
+                <h3 class="service-title">Administración de Redes</h3>
+                <p class="service-description">
+                    Monitoreo y mantenimiento continuo de redes para asegurar un rendimiento óptimo y solucionar problemas de conectividad.
+                </p>
+            </div>
+            <div class="service-block">
+                <img class="icon" src="~/img/icons/server.png" />
+                <div class="selection-indicator"><div></div></div>
+                <h3 class="service-title">Optimización de Redes</h3>
+                <p class="service-description">
+                    Análisis y mejora de la infraestructura de red para aumentar la velocidad, reducir la latencia y mejorar la experiencia del usuario.
+                </p>
+            </div>
+        </div>
+        <div class="block services-blocks-wrapper hidden" id="service-block-3">
+            <p class="service-title-wrapper" id="service-block-3-title" hidden>Outsourcing</p>
+            <div class="service-block">
+                <img class="icon" src="~/img/icons/engineer.png" />
+                <div class="selection-indicator"><div></div></div>
+                <h3 class="service-title">Soporte Técnico Remoto</h3>
+                <p class="service-description">
+                    Asistencia técnica para resolver problemas de software y hardware a distancia.
+                </p>
+            </div>
+            <div class="service-block">
+                <img class="icon" src="~/img/icons/server.png" />
+                <div class="selection-indicator"><div></div></div>
+                <h3 class="service-title">Gestión de Infraestructura IT</h3>
+                <p class="service-description">
+                    Administración y mantenimiento de servidores, redes y otros sistemas de infraestructura.
+                </p>
+            </div>
+            <div class="service-block">
+                <img class="icon" src="~/img/icons/phone.png" />
+                <div class="selection-indicator"><div></div></div>
+                <h3 class="service-title">Help Desk</h3>
+                <p class="service-description">
+                    Soporte al cliente a través de un centro de atención telefónica o chat en vivo.
+                </p>
+            </div>
+        </div>
+    </div>
+</main>
+
+@section References {
+    <script src="~/js/service.js"></script>
+    <link href="~/css/service.css" rel="stylesheet"   />
 }

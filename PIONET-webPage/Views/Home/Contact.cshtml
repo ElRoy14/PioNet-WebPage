@@ -1,5 +1,103 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
+﻿@{
+    ViewData["Title"] = "Contact Page";
+}
+
+<main>
+    <div class="contact-image-wrapper">
+        <img src="~/img/page/walking.jpg" />
+    </div>
+    <div class="contact-section-wrapper">
+
+        <ul class="nav nav-tabs" id="myTab" role="tablist">
+            <li class="nav-item" role="presentation">
+                <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">Info de Contacto</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false">Form de Contacto</button>
+            </li>
+        </ul>
+
+        <div class="tab-content pt-2">
+            <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                <h2 class="contact-title">Información de Contacto</h2>
+                <div class="contact-info-blocks-wrapper">
+                    <div class="contact-info-block">
+                        <img class="icon" src="~/img/icons/phone.png" />
+                        <h3 class="block-title">Número de Teléfono</h3>
+                        <p class="contact-info">
+                            (829)464-0814
+                        </p>
+                    </div>
+                    <div class="contact-info-block">
+                        <img class="icon" src="~/img/icons/mail.png" />
+                        <h3 class="block-title">Correo Electronico</h3>
+                        <p class="contact-info">
+                            roylinrodriguez5@gmail.com
+                        </p>
+                    </div>
+                    <div class="contact-info-block">
+                        <img class="icon" src="~/img/icons/location.png" />
+                        <h3 class="block-title">Dirección</h3>
+                        <p class="contact-info">
+                            Parque Enriquillo
+                        </p>
+                    </div>
+                    <div class="contact-info-block">
+                        <img class="icon" src="~/img/icons/share.png" />
+                        <h3 class="block-title">Redes Sociales</h3>
+                        <div class="contact-info">
+                            <a href="https://es.wikipedia.org/wiki/WhatsApp"><img src="~/img/icons/whatsapp.svg" /></a>
+                            <a href="https://es.wikipedia.org/wiki/Facebook"><img src="~/img/icons/facebook.svg" /></a>
+                            <a href="https://es.wikipedia.org/wiki/Instagram"><img src="~/img/icons/instagram.svg" /></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                <div class="contact-form-wrapper">
+                    <h2 class="form-title">Formulario de Contacto</h2>
+                    <form id="contact-form" class="contact-form">
+                        <input name="username" class="name-input" placeholder="Nombre*" required />
+                        <input name="phonenumber" class="phone-number-input" placeholder="Número de Teléfono" />
+                        <input name="email" class="email-number-input" placeholder="Correo Electronico*" required />
+                        <textarea name="message" class="message-input" placeholder="Mensaje*" required></textarea>
+                        <button type="submit" class="btn-submit">Enviar</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+</main>
+
+@section References {
+    <script>
+        const frmEmail = document.getElementById('contact-form');
+
+        const serviceId = '@ViewBag.ServiceId';
+        const templateId = '@ViewBag.';
+        const apiKey = '@ViewBag.';
+
+        frmEmail.addEventListener('submit', (event) => {
+            event.preventDefault();
+            emailjs.init(serviceId);
+
+            console.log(serviceId);
+
+            alert("Espera un segundo");
+
+            emailjs.sendForm(serviceId, templateId, frmEmail, apiKey)
+            .then( result => Swal.fire("Su mensaje ha sido enviado con exito."))
+            .catch((error) => {
+                Swal.fire({
+                    icon: "error",
+                    title: "Oops...",
+                    text: "No ha sido posible enviar el mensaje",
+                });
+            });
+        });
+    </script>
+    <script src="~/js/contact.js"></script>
+    <link href="~/css/contact.css" rel="stylesheet"   />
 }

@@ -2,7 +2,68 @@
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+<main>
+    <div class="home-image-wrapper">
+        <img src="~/img/page/building.jpg" />
+    </div>
+    <div class="home-first-section-wrapper">
+        <h2 class="home-first-section-title">Innovación Tecnológica para el Futuro de Nuestros Clientes</h2>
+        <p>
+            En nuestra empresa, nos dedicamos a transformar el panorama tecnológico de nuestros clientes.
+        </p>
+        <img src="~/img/page/laptops.jpg" />
+        <button id="btn-services" class="home-btn-services"><a href="/Home/Service">Conocer Más</a></button>
+        <p>
+            "Innovación y Seguridad para tu Crecimiento"
+        </p>
+    </div>
+    <div class="home-second-section-wrapper">
+        <h2 class="home-second-section-title">Líderes en Innovación y Excelencia en Tecnología</h2>
+        <p>
+            Aspiramos a ser la empresa de referencia en desarrollo de software, networking y outsourcing. Nuestro objetivo es anticiparnos a las necesidades del mercado, destacándonos por nuestra dedicación a la excelencia, la innovación continua y la completa satisfacción del cliente.
+        </p>
+        <div class="home-images-carousel-wrapper">
+            <img src="~/img/page/vision_1_photo.jpg" />
+            <img src="~/img/page/servers.jpg" />
+            <img src="~/img/page/proxy.jpg" />
+        </div>
+    </div>
+    <div class="home-division-wrapper">
+    </div>
+    <div class="home-third-section-wrapper">
+        <div class="section-1">
+            <img src="~/img/page/startup.jpg" />
+            <div class="section-1-text-container">
+                <h3>Misión</h3>
+                <p>
+                    Transformar el panorama tecnológico de nuestros clientes mediante el desarrollo de soluciones de software innovadoras, redes seguras y servicios de outsourcing eficientes, todo ello con un enfoque en la calidad, la agilidad y la colaboración, para impulsar su crecimiento y competitividad en el mercado.
+                </p>
+            </div>
+        </div>
+        <hr />
+        <div class="section-2">
+            <div class="section-2-text-container">
+                <h3>Visión</h3>
+                <p>
+                    Ser la empresa de referencia en el ámbito del desarrollo de software, networking y outsourcing, reconocida por nuestra capacidad de anticiparnos a las necesidades del mercado y por nuestro compromiso con la excelencia, la innovación y la satisfacción del cliente.
+                </p>
+            </div>
+            <img src="~/img/page/student.jpg" />
+        </div>
+        <hr />
+        <div class="section-3">
+            <img src="~/img/page/objetivos.jpg" />
+            <div class="section-3-text-container">
+                <h3>Objetivos</h3>
+                <p>
+                    Ampliar nuestra presencia en mercados nacionales e internacionales, diversificando nuestra oferta de servicios para satisfacer las necesidades cambiantes de nuestros clientes.
+                </p>
+            </div>
+        </div>
+    </div>
+</main>
+
+@section References {
+    <script src="~/js/home.js"></script>
+    <link href="~/css/home.css" rel="stylesheet" />
+}
