@@ -24,7 +24,10 @@
       "launchBrowser": true,
       "applicationUrl": "https://localhost:7165;http://localhost:5153",
       "environmentVariables": {
-        "ASPNETCORE_ENVIRONMENT": "Development"
+        "ASPNETCORE_ENVIRONMENT": "Development",
+        "ApiKey": "58cbHIs88hvj05hcg",
+        "ServiceId": "service_83a6imq",
+        "TemplateId": "template_5vkrlsd"
       }
     },
     "IIS Express": {

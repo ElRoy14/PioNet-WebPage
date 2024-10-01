@@ -5,6 +5,7 @@
     .services-image-wrapper img {
         width: 100%;
         height: var(--height, 500px);
+        object-fit: cover;
     }
 
 /* Pantallas pequeñas (Menos de 600px de ancho) */
@@ -12,6 +13,7 @@
     .services-image-wrapper img {
         width: 212%;
         height: 1428px !important;
+        object-fit: cover;
     }
 
     .services-section-wrapper {
@@ -44,6 +46,7 @@
         width: 30%;
         height: 75px;
         margin: 10% 0 5% 0;
+        object-fit: cover;
 
         @media (width <= 1536px) and (height <= 737.60px) {
             width: 38%;
@@ -85,6 +88,7 @@
     .services-image-wrapper img {
         width: 212%;
         height: 1426px !important;
+        object-fit: cover;
     }
 
     .services-section-wrapper {
@@ -117,6 +121,7 @@
         width: 30%;
         height: 75px;
         margin: 10% 0 5% 0;
+        object-fit: cover;
 
         @media (width <= 1536px) and (height <= 737.60px) {
             width: 38%;
@@ -157,12 +162,14 @@
 @media (min-width: 481px) and (max-width: 768px) and (min-height: 801px) and (max-height: 1024px) {
     .services-image-wrapper img {
         height: 500px !important;
+        object-fit: cover;
     }
 }
 
 @media (min-width: 769px) and (max-width: 1200px) and (min-height: 600px) and (max-height: 900px) {
     .services-image-wrapper img {
         height: 600px !important;
+        object-fit: cover;
     }
 
     .services-blocks-wrapper {
@@ -188,6 +195,7 @@
         width: 30%;
         height: 75px;
         margin: 10% 0 5% 0;
+        object-fit: cover;
 
         @media (width <= 1536px) and (height <= 737.60px) {
             width: 38%;
@@ -234,6 +242,7 @@
     .services-image-wrapper img {
         width: 115% !important;
         height: 508px !important;
+        object-fit: cover;
     }
 
     .services-section-wrapper {
@@ -257,7 +266,25 @@
 @media (min-width: 1201px) and (min-height: 700px) {
     .services-image-wrapper img {
         height: 600px !important;
+        object-fit: cover;
     }
+
+    .services-section-wrapper {
+        width: 111% !important;
+    }
+
+    .service-block {
+        position: relative;
+        display: grid;
+        place-items: center;
+        text-align: center;
+        width: 70% !important;
+        background-color: coral;
+        border-radius: 25px;
+        box-sizing: border-box;
+        z-index: 1;
+    }
+
 }
 
 @media (min-width: 1201px) and (min-height: 800px) {
@@ -267,12 +294,13 @@
     }
 
     .services-image-wrapper img {
-        width: 143% !important;
+        width: 112.5% !important;
         height: 805px !important;
+        object-fit: cover;
     }
 
     .services-section-wrapper {
-        width: 143%;
+        width: 112.5%;
     }
 
     .service-block {
@@ -280,7 +308,7 @@
         display: grid;
         place-items: center;
         text-align: center;
-        width: 143%;
+        width: 70% !important;
         background-color: coral;
         border-radius: 25px;
         box-sizing: border-box;
@@ -324,30 +352,31 @@
         z-index: 1;
     }
 
-    .icon {
-        width: 30%;
-        height: 75px;
-        margin: 10% 0 5% 0;
-    }
+.icon {
+    width: 30%;
+    height: 75px;
+    margin: 10% 0 5% 0;
+    object-fit: contain;
+}
 
-    .selection-indicator {
-        position: absolute;
-        top: 10px;
-        right: 10px;
-        width: 35px;
-        height: 35px;
-        border: 2px solid #3b8435;
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        z-index: 10;
-    }
+.selection-indicator {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 35px;
+    height: 35px;
+    border: 2px solid #00d1b6;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+}
 
         .selection-indicator div {
             width: 25px;
             height: 25px;
-            background-color: #3b8435;
+            background-color: #00d1b6;
             border-radius: 50%;
         }
 

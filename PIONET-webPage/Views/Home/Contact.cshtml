@@ -1,5 +1,5 @@
 ﻿@{
-    ViewData["Title"] = "Contact Page";
+    ViewData["Title"] = "Contact";
 }
 
 <main>
@@ -22,33 +22,33 @@
                 <h2 class="contact-title">Información de Contacto</h2>
                 <div class="contact-info-blocks-wrapper">
                     <div class="contact-info-block">
-                        <img class="icon" src="~/img/icons/phone.png" />
+                        <img class="icon" src="~/img/icons/blue-phone.png" />
                         <h3 class="block-title">Número de Teléfono</h3>
                         <p class="contact-info">
-                            (829)464-0814
+                            +1 (829)873-8615
                         </p>
                     </div>
                     <div class="contact-info-block">
-                        <img class="icon" src="~/img/icons/mail.png" />
+                        <img class="icon" src="~/img/icons/blue-email.png" />
                         <h3 class="block-title">Correo Electronico</h3>
                         <p class="contact-info">
-                            roylinrodriguez5@gmail.com
+                            projects@pionetglobal.com
                         </p>
                     </div>
                     <div class="contact-info-block">
-                        <img class="icon" src="~/img/icons/location.png" />
+                        <img class="icon" src="~/img/icons/blue-location.png" />
                         <h3 class="block-title">Dirección</h3>
                         <p class="contact-info">
-                            Parque Enriquillo
+                            20th Street, House #34,  Dominican Republic, Santo Domingo Norte, 11201
                         </p>
                     </div>
                     <div class="contact-info-block">
-                        <img class="icon" src="~/img/icons/share.png" />
+                        <img class="icon" src="~/img/icons/blue-share.png" />
                         <h3 class="block-title">Redes Sociales</h3>
                         <div class="contact-info">
-                            <a href="https://es.wikipedia.org/wiki/WhatsApp"><img src="~/img/icons/whatsapp.svg" /></a>
-                            <a href="https://es.wikipedia.org/wiki/Facebook"><img src="~/img/icons/facebook.svg" /></a>
-                            <a href="https://es.wikipedia.org/wiki/Instagram"><img src="~/img/icons/instagram.svg" /></a>
+                            <a href="https://wa.me/18298738615"><img class="contact-icon" src="~/img/icons/blue-whatsapp.png" /></a>
+                            <a href="https://www.instagram.com/pionetglobal?igsh=cHJvbmZwYndmbmNq "><img class="contact-icon" src="~/img/icons/blue-instagram.png" /></a>
+                            <a><img class="contact-icon" src="~/img/icons/blue-linkedin.svg" /></a>
                         </div>
                     </div>
                 </div>
@@ -58,7 +58,7 @@
                     <h2 class="form-title">Formulario de Contacto</h2>
                     <form id="contact-form" class="contact-form">
                         <input name="username" class="name-input" placeholder="Nombre*" required />
-                        <input name="phonenumber" class="phone-number-input" placeholder="Número de Teléfono" />
+                        <input name="phone-number" class="phone-number-input" placeholder="Número de Teléfono" />
                         <input name="email" class="email-number-input" placeholder="Correo Electronico*" required />
                         <textarea name="message" class="message-input" placeholder="Mensaje*" required></textarea>
                         <button type="submit" class="btn-submit">Enviar</button>
@@ -74,29 +74,37 @@
 @section References {
     <script>
         const frmEmail = document.getElementById('contact-form');
+        frmEmail.addEventListener('submit', sendEmail);
 
-        const serviceId = '@ViewBag.ServiceId';
-        const templateId = '@ViewBag.';
-        const apiKey = '@ViewBag.';
-
-        frmEmail.addEventListener('submit', (event) => {
+        function sendEmail(event) {
             event.preventDefault();
-            emailjs.init(serviceId);
 
-            console.log(serviceId);
+            fetch('/Home/GetCredentials')
+                .then(response => {
+                    if(!response.ok){
+                        throw new Error('Error en la solicitud.')
+                    }
+                    return response.json();
+                })
+                .then(data => {
 
-            alert("Espera un segundo");
+                    emailjs.init(data.serviceId);
 
-            emailjs.sendForm(serviceId, templateId, frmEmail, apiKey)
-            .then( result => Swal.fire("Su mensaje ha sido enviado con exito."))
-            .catch((error) => {
-                Swal.fire({
-                    icon: "error",
-                    title: "Oops...",
-                    text: "No ha sido posible enviar el mensaje",
+                    emailjs.sendForm(data.serviceId, data.templateId, frmEmail, data.apiKey)
+                        .then(result => Swal.fire('Su mensaje se ha enviado con éxito.'))
+                        .catch(error => {
+                            Swal.fire({
+                                icon: 'error',
+                                title: 'Oops...',
+                                text: 'No ha sido posible enviar el mensaje',
+                            })
+                        })
+
+                })
+                .catch(error => {
+                    console.error('Error:', error);
                 });
-            });
-        });
+        }
     </script>
     <script src="~/js/contact.js"></script>
     <link href="~/css/contact.css" rel="stylesheet"   />

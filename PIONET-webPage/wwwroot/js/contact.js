@@ -1,8 +1,4 @@
-﻿document.addEventListener("DOMContentLoaded", function () {
-    console.log("Service ID", window.serviceId);
-});
-
-DocumentTitle = document.title;
+﻿DocumentTitle = document.title;
 homeText = document.getElementById('home-text');
 aboutText = document.getElementById('about-text');
 serviceText = document.getElementById('service-text');

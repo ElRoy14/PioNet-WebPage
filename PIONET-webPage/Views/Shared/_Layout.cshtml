@@ -3,13 +3,16 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - PIONET-webPage</title>
+    <title>@ViewData["Title"] - PIONET</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/PIONET-webPage.styles.css" asp-append-version="true" />
     <link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="icon" href="~/img/page/Logo.png" >
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Arvo:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
@@ -18,7 +21,7 @@
         <nav id="navbar" class="bottom-nav">
             <ul>
                 <li>
-                    <img src="~/img/packer-original.svg" />
+                    <img src="~/img/page/Logo.png" />
                 </li>
                 <li>
                     <a id="home-text" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
@@ -42,8 +45,28 @@
     </div>
     <!-- ======= Footer ======= -->
     <footer id="footer" class="footer">
+        @* <div class="sections">
+            <div class="contact-footer">
+                <h3>Contact</h3>
+                <ul class="list-contacts">
+                    <li>20th Street, House #34, DR,St. Do. Norte, 11201</li>
+                    <li><a href="https://www.instagram.com/pionetglobal?igsh=cHJvbmZwYndmbmNq ">@@pionetglobal</a></li>
+                    <li>Teléfono: +1 (829) 873-8615</li>
+                </ul>
+            </div>
+        </div> *@
+        <hr />
+        <div class="social-media">
+            <p><strong>Follow Us</strong></p>
+            <div class="contact-info">
+                <a href="https://wa.me/18298738615"><img class="social-icon" src="~/img/icons/blue-whatsapp.png" /></a>
+                <a href="https://www.instagram.com/pionetglobal?igsh=cHJvbmZwYndmbmNq "><img class="social-icon" src="~/img/icons/blue-instagram.png" /></a>
+                <a><img class="social-icon" src="~/img/icons/blue-linkedin.svg" /></a>
+            </div>
+        </div>
         <div class="copyright">
-            <p><strong><span>&copy; @DateTime.Now.Year - Web Site</span></strong></p>
+            <p>Copyrigth &copy; @DateTime.Now.Year Pionet Global. All Rigth Reserved.</p>
+            <p>Developed by <a href="https://github.com/ElRoy14" target="_blank">Roylin E. Rodriguez </a></p>
         </div>
     </footer><!-- End Footer -->
     <script src="~/lib/jquery/dist/jquery.min.js"></script>

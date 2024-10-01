@@ -33,11 +33,30 @@ namespace PIONET_webPage.Controllers
         public IActionResult Contact()
         {
 
-            string serviceId = _configuration["EmailVariables:Service_ID"];
+            string serviceId = _configuration["ServiceId"];
+            string templateId = _configuration["TemplateId"];
+            string apiKeyId = _configuration["ApiKey"];
 
             ViewBag.ServiceId = serviceId;
+            ViewBag.TemplateId = templateId;
+            ViewBag.ApiKey = apiKeyId;
 
             return View();
+        }
+
+        public JsonResult GetCredentials()
+        {
+
+            string serviceId = _configuration["ServiceId"];
+            string templateId = _configuration["TemplateId"];
+            string apiKey = _configuration["ApiKey"];
+
+            return Json(new
+            {
+                serviceId = serviceId,
+                templateId = templateId,
+                apiKey = apiKey
+            });
         }
 
         public IActionResult Privacy()
